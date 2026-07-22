@@ -30,3 +30,28 @@ console.log(color);
 for (let idx = 0; idx < movies.length; idx++) {
   console.log(movies[idx]);
 }
+
+let tasks = [];
+function addTask(task) {
+  tasks.push(task);
+  console.log(`Added task: ${task}`);
+}
+function listTasks() {
+  console.log("To-Do List:");
+  for (let i = 0; i < tasks.length; i++) {
+    console.log(`${i + 1}. ${tasks[i]}`);
+  }
+}
+function removeTask(index) {
+  if (index >= 0 && index < tasks.length) {
+    console.log(`Removed: ${tasks[index]}`);
+    tasks.splice(index, 1);
+    // tasks.pop();
+  }
+}
+// Demo
+addTask("Learn JS basics");
+addTask("Build a mini project");
+listTasks();
+removeTask(0);
+listTasks();
